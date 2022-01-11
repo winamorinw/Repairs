@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RepairsDataSet9" targetNamespace="http://tempuri.org/RepairsDataSet9.xsd" xmlns:mstns="http://tempuri.org/RepairsDataSet9.xsd" xmlns="http://tempuri.org/RepairsDataSet9.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="RepairOSConnStr" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="RepairOSConnStr (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Repairs.Properties.Settings.GlobalReference.Default.RepairOSConnStr" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RepairTableAdapter" GeneratorDataComponentClassName="RepairTableAdapter" Name="Repair" UserDataComponentName="RepairTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RepairOSConnStr (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText> select r.DateIn,r.DateOut, r.CODCX,r.CODUTH, r.CODBRIG, r.NAMEDET, r.InventoryNumber,
+        rp.Shpz, rp.Name, rp.Quantity,rp.Prace
+from repair r
+  left join job j on r.RepairID=j.RepairId
+  left join job j2 on j.JobId=j2.JobId
+	left join refjob rj on rj.JobCode=j2.JobCode 
+  left join ReplacedPart rp on j.JobId=rp.JobId
+  where ( ( (convert(datetime,convert(varchar,r.DateOut,1),1)) &gt;= (convert(datetime,convert(varchar,'20160404',1),1)))
+     and ((convert(datetime,convert(varchar,r.DateOut,1),1))&lt;= (convert(datetime,convert(varchar,'20160404',1),1)) ) )  order by r.CODCX,r.CODUTH, r.CODBRIG,r.InventoryNumber</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Shpz" DataSetColumn="Shpz" />
+              <Mapping SourceColumn="Quantity" DataSetColumn="Quantity" />
+              <Mapping SourceColumn="Prace" DataSetColumn="Prace" />
+              <Mapping SourceColumn="DateIn" DataSetColumn="DateIn" />
+              <Mapping SourceColumn="DateOut" DataSetColumn="DateOut" />
+              <Mapping SourceColumn="CODCX" DataSetColumn="CODCX" />
+              <Mapping SourceColumn="CODUTH" DataSetColumn="CODUTH" />
+              <Mapping SourceColumn="CODBRIG" DataSetColumn="CODBRIG" />
+              <Mapping SourceColumn="NAMEDET" DataSetColumn="NAMEDET" />
+              <Mapping SourceColumn="InventoryNumber" DataSetColumn="InventoryNumber" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="RepairOSConnStr (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText> select r.DateIn,r.DateOut, r.CODCX,r.CODUTH, r.CODBRIG, r.NAMEDET, r.InventoryNumber,
+        rp.Shpz, rp.Name, rp.Quantity,rp.Prace
+from repair r
+  left join job j on r.RepairID=j.RepairId
+  left join job j2 on j.JobId=j2.JobId
+	left join refjob rj on rj.JobCode=j2.JobCode 
+  left join ReplacedPart rp on j.JobId=rp.JobId
+  where ( ( (convert(datetime,convert(varchar,r.DateOut,1),1)) &gt;= (convert(datetime,convert(varchar,'20160404',1),1)))
+     and ((convert(datetime,convert(varchar,r.DateOut,1),1))&lt;= (convert(datetime,convert(varchar,'20160404',1),1)) ) )  order by r.CODCX,r.CODUTH, r.CODBRIG,r.InventoryNumber</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RepairsDataSet9" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="RepairsDataSet9" msprop:Generator_UserDSName="RepairsDataSet9">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Repair" msprop:Generator_TableClassName="RepairDataTable" msprop:Generator_TableVarName="tableRepair" msprop:Generator_TablePropName="Repair" msprop:Generator_RowDeletingName="RepairRowDeleting" msprop:Generator_RowChangingName="RepairRowChanging" msprop:Generator_RowEvHandlerName="RepairRowChangeEventHandler" msprop:Generator_RowDeletedName="RepairRowDeleted" msprop:Generator_UserTableName="Repair" msprop:Generator_RowChangedName="RepairRowChanged" msprop:Generator_RowEvArgName="RepairRowChangeEvent" msprop:Generator_RowClassName="RepairRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Shpz" msprop:Generator_ColumnVarNameInTable="columnShpz" msprop:Generator_ColumnPropNameInRow="Shpz" msprop:Generator_ColumnPropNameInTable="ShpzColumn" msprop:Generator_UserColumnName="Shpz" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_UserColumnName="Quantity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Prace" msprop:Generator_ColumnVarNameInTable="columnPrace" msprop:Generator_ColumnPropNameInRow="Prace" msprop:Generator_ColumnPropNameInTable="PraceColumn" msprop:Generator_UserColumnName="Prace" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" />
+              <xs:element name="DateOut" msprop:Generator_ColumnVarNameInTable="columnDateOut" msprop:Generator_ColumnPropNameInRow="DateOut" msprop:Generator_ColumnPropNameInTable="DateOutColumn" msprop:Generator_UserColumnName="DateOut" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CODCX" msprop:Generator_ColumnVarNameInTable="columnCODCX" msprop:Generator_ColumnPropNameInRow="CODCX" msprop:Generator_ColumnPropNameInTable="CODCXColumn" msprop:Generator_UserColumnName="CODCX" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODUTH" msprop:Generator_ColumnVarNameInTable="columnCODUTH" msprop:Generator_ColumnPropNameInRow="CODUTH" msprop:Generator_ColumnPropNameInTable="CODUTHColumn" msprop:Generator_UserColumnName="CODUTH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODBRIG" msprop:Generator_ColumnVarNameInTable="columnCODBRIG" msprop:Generator_ColumnPropNameInRow="CODBRIG" msprop:Generator_ColumnPropNameInTable="CODBRIGColumn" msprop:Generator_UserColumnName="CODBRIG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAMEDET" msprop:Generator_ColumnVarNameInTable="columnNAMEDET" msprop:Generator_ColumnPropNameInRow="NAMEDET" msprop:Generator_ColumnPropNameInTable="NAMEDETColumn" msprop:Generator_UserColumnName="NAMEDET" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InventoryNumber" msprop:Generator_ColumnVarNameInTable="columnInventoryNumber" msprop:Generator_ColumnPropNameInRow="InventoryNumber" msprop:Generator_ColumnPropNameInTable="InventoryNumberColumn" msprop:Generator_UserColumnName="InventoryNumber" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

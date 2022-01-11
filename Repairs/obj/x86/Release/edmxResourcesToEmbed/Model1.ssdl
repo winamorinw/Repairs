@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RepairsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="RepairsModelStoreContainer" />
+  <!--Ошибки, обнаруженные при создании:
+      предупреждение 6013: Первичный ключ в таблице или представлении "Repairs.dbo.Tmp_JobAKT" не определен, его не удалось вывести. Эта таблица или представление исключена. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+      
+      <EntityType Name="Tmp_JobAKT">
+        <Property Name="zakazchik_codcx" Type="nchar" MaxLength="5" />
+        <Property Name="zakazchik_coduth" Type="nchar" MaxLength="5" />
+        <Property Name="zakazchik_codbrig" Type="nchar" MaxLength="5" />
+        <Property Name="zakazchik_coddet" Type="nchar" MaxLength="5" />
+        <Property Name="ispolnotel_codcx" Type="nchar" MaxLength="5" />
+        <Property Name="ispolnotel_coduth" Type="nchar" MaxLength="5" />
+        <Property Name="ispolnotel_codbrig" Type="nchar" MaxLength="5" />
+        <Property Name="ispolnotel_coddet" Type="nchar" MaxLength="5" />
+        <Property Name="shpz" Type="nchar" MaxLength="10" />
+        <Property Name="name_OS" Type="nvarchar(max)" />
+        <Property Name="inventoryNamber" Type="int" />
+        <Property Name="obekt" Type="smallint" />
+        <Property Name="periodData1" Type="date" />
+        <Property Name="periodDate2" Type="date" />
+        <Property Name="dolg1F2" Type="nvarchar" MaxLength="50" />
+        <Property Name="FIO1F2" Type="nvarchar" MaxLength="50" />
+        <Property Name="dolg2F2" Type="nvarchar" MaxLength="50" />
+        <Property Name="FIO2F2" Type="nvarchar" MaxLength="50" />
+        <Property Name="dolg3F2" Type="nvarchar" MaxLength="50" />
+        <Property Name="FIO3F2" Type="nvarchar" MaxLength="50" />
+        <Property Name="dolg4F2" Type="nvarchar" MaxLength="50" />
+        <Property Name="FIO4F2" Type="nvarchar" MaxLength="50" />
+        <Property Name="nam_job" Type="nchar" MaxLength="10" />
+        <Property Name="cexVitrProc" Type="float" />
+        <Property Name="amortProc" Type="float" />
+        <Property Name="vsego_ZP" Type="float" />
+        <Property Name="sumNalogov" Type="float" />
+        <Property Name="TZV" Type="float" />
+      </EntityType>-->
+</Schema>

@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RepairsDataSet3" targetNamespace="http://tempuri.org/RepairsDataSet31.xsd" xmlns:mstns="http://tempuri.org/RepairsDataSet31.xsd" xmlns="http://tempuri.org/RepairsDataSet31.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="RepairOSConnStr" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="RepairOSConnStr (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Repairs.Properties.Settings.GlobalReference.Default.RepairOSConnStr" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProizvodTehOtchetWithNomerTableAdapter" GeneratorDataComponentClassName="ProizvodTehOtchetWithNomerTableAdapter" Name="ProizvodTehOtchetWithNomer" UserDataComponentName="ProizvodTehOtchetWithNomerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RepairOSConnStr (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>--SELECT os.b_bal_cena, NumberPto, ednome, pto.name as name, quantity, mera, prace, summa, tehno, norma, --vedomostnumber, pto.inventoryNumber as inventoryNumber , NameOs, Obect, kol_1_1, sum_1_1, kol_1_2, --sum_1_2, kol_2_1, sum_2_1, kol_2_2, sum_2_2, priznak ,srok_zameni,sz.nam_zameni
+--FROM dbo.ProizvodTehOtchetWithNomer(@idpto) pto
+--left join SprOS os on pto.inventoryNumber=os.InventoryNumber  and  pto.Obect=os.Obekt left join
+ --Srok_zameni sz on pto.srok_zameni=sz.id_zameni
+SELECT os.b_bal_cena , NumberPto, ednome, pto.name as name, quantity, mera, prace, summa, tehno, norma, vedomostnumber, pto.inventoryNumber as inventoryNumber , 
+NameOs, Obect, kol_1_1, sum_1_1, kol_1_2, sum_1_2, kol_2_1, sum_2_1, kol_2_2, sum_2_2, priznak ,srok_zameni,sz.nam_zameni,'1pto' as namdoc
+FROM dbo.ProizvodTehOtchetWithNomer(@idpto) pto
+left join SprOS os on pto.inventoryNumber=os.InventoryNumber  and  pto.Obect=os.Obekt left join Srok_zameni sz on pto.srok_zameni=sz.id_zameni
+--union
+--SELECT  '' as   b_bal_cena,  cast(PTO.NomPTO as int) as numberpto, VozvrDet.EdNumber as --ednome,VozvrDet.Name
+--	,  VozvrDet.Quantity , '' as mera , 0 as prace , 0 as summa, 0 as tehno , 0 as norma
+--	, Vedomost_Resursov.Id as VedomostNumber, Vedomost_Resursov.InventoryNamber as --InventoryNamber, 
+--	--'' as NameOs
+--	NameOs = 'Інв. №' + CAST(Vedomost_Resursov.InventoryNamber as nvarchar(15)) + '  '+ CAST--(Vedomost_Resursov.Obekt as nvarchar(15)) + '  ' + Vedomost_Resursov.NameOs
+--	, '' as Obect
+--	, null as kol_1_1,null as sum_1_1, null as kol_1_2,null as sum_1_2,null as kol_2_1,null as sum_2_1
+--	, null as kol_2_2,null as sum_2_2, '' as priznak	, '' as srok_zameni	, '' as nam_zameni
+--	 ,'2det' as namdoc
+--FROM            PTO 
+--INNER JOIN Vedomost_Resursov ON PTO.IdPTO = Vedomost_Resursov.IdPTO 
+--INNER JOIN VozvrDet ON Vedomost_Resursov.RepairID = VozvrDet.RepairID
+--WHERE        (PTO.IdPTO =@idpto)
+union all
+SELECT    '' as   b_bal_cena, cast( PTO.NomPTO as int)as numberpto , VozvrMet.EdNumber as ednome, VozvrMet.Name
+	 , VozvrMet.Quantity, '' as mera, VozvrMet.Price as prace , VozvrMet.Sum as summa,
+    0 as tehno , 0 as norma 
+	, Vedomost_Resursov.Id as VedomostNumber, Vedomost_Resursov.InventoryNamber as InventoryNamber, 
+	
+	--'' as NameOs, 
+	  NameOs = 'Інв. №' + CAST(Vedomost_Resursov.InventoryNamber as nvarchar(15)) + '  '+ CAST(Vedomost_Resursov.Obekt as nvarchar(15)) + '  ' + Vedomost_Resursov.NameOs,
+	'' as Obect
+	, null as kol_1_1, null as sum_1_1, null as kol_1_2, null as sum_1_2, null as kol_2_1, null as sum_2_1
+	, null as kol_2_2, 0 as sum_2_2, null as priznak, '' as srok_zameni, '' as nam_zameni
+		 ,'3met' as namdoc
+FROM            PTO 
+INNER JOIN Vedomost_Resursov ON PTO.IdPTO = Vedomost_Resursov.IdPTO 
+INNER JOIN VozvrMet ON Vedomost_Resursov.RepairID = VozvrMet.RepairID and Vedomost_Resursov.ID  = VozvrMet.VedomostNumber
+WHERE        (PTO.IdPTO = @idpto) 
+order by inventoryNumber,namdoc</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="idpto" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idpto" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NumberPto" DataSetColumn="NumberPto" />
+              <Mapping SourceColumn="ednome" DataSetColumn="ednome" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="quantity" DataSetColumn="quantity" />
+              <Mapping SourceColumn="mera" DataSetColumn="mera" />
+              <Mapping SourceColumn="prace" DataSetColumn="prace" />
+              <Mapping SourceColumn="summa" DataSetColumn="summa" />
+              <Mapping SourceColumn="tehno" DataSetColumn="tehno" />
+              <Mapping SourceColumn="norma" DataSetColumn="norma" />
+              <Mapping SourceColumn="vedomostnumber" DataSetColumn="vedomostnumber" />
+              <Mapping SourceColumn="NameOs" DataSetColumn="NameOs" />
+              <Mapping SourceColumn="Obect" DataSetColumn="Obect" />
+              <Mapping SourceColumn="kol_1_1" DataSetColumn="kol_1_1" />
+              <Mapping SourceColumn="sum_1_1" DataSetColumn="sum_1_1" />
+              <Mapping SourceColumn="kol_1_2" DataSetColumn="kol_1_2" />
+              <Mapping SourceColumn="sum_1_2" DataSetColumn="sum_1_2" />
+              <Mapping SourceColumn="kol_2_1" DataSetColumn="kol_2_1" />
+              <Mapping SourceColumn="sum_2_1" DataSetColumn="sum_2_1" />
+              <Mapping SourceColumn="kol_2_2" DataSetColumn="kol_2_2" />
+              <Mapping SourceColumn="sum_2_2" DataSetColumn="sum_2_2" />
+              <Mapping SourceColumn="priznak" DataSetColumn="priznak" />
+              <Mapping SourceColumn="inventoryNumber" DataSetColumn="inventoryNumber" />
+              <Mapping SourceColumn="srok_zameni" DataSetColumn="srok_zameni" />
+              <Mapping SourceColumn="nam_zameni" DataSetColumn="nam_zameni" />
+              <Mapping SourceColumn="namdoc" DataSetColumn="namdoc" />
+              <Mapping SourceColumn="b_bal_cena" DataSetColumn="b_bal_cena" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RepairsDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="RepairsDataSet3" msprop:Generator_UserDSName="RepairsDataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ProizvodTehOtchetWithNomer" msprop:Generator_TableClassName="ProizvodTehOtchetWithNomerDataTable" msprop:Generator_TableVarName="tableProizvodTehOtchetWithNomer" msprop:Generator_TablePropName="ProizvodTehOtchetWithNomer" msprop:Generator_RowDeletingName="ProizvodTehOtchetWithNomerRowDeleting" msprop:Generator_RowChangingName="ProizvodTehOtchetWithNomerRowChanging" msprop:Generator_RowEvHandlerName="ProizvodTehOtchetWithNomerRowChangeEventHandler" msprop:Generator_RowDeletedName="ProizvodTehOtchetWithNomerRowDeleted" msprop:Generator_UserTableName="ProizvodTehOtchetWithNomer" msprop:Generator_RowChangedName="ProizvodTehOtchetWithNomerRowChanged" msprop:Generator_RowEvArgName="ProizvodTehOtchetWithNomerRowChangeEvent" msprop:Generator_RowClassName="ProizvodTehOtchetWithNomerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NumberPto" msprop:Generator_ColumnVarNameInTable="columnNumberPto" msprop:Generator_ColumnPropNameInRow="NumberPto" msprop:Generator_ColumnPropNameInTable="NumberPtoColumn" msprop:Generator_UserColumnName="NumberPto" type="xs:int" minOccurs="0" />
+              <xs:element name="ednome" msprop:Generator_ColumnVarNameInTable="columnednome" msprop:Generator_ColumnPropNameInRow="ednome" msprop:Generator_ColumnPropNameInTable="ednomeColumn" msprop:Generator_UserColumnName="ednome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="quantity" msprop:Generator_ColumnVarNameInTable="columnquantity" msprop:Generator_ColumnPropNameInRow="quantity" msprop:Generator_ColumnPropNameInTable="quantityColumn" msprop:Generator_UserColumnName="quantity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="mera" msprop:Generator_ColumnVarNameInTable="columnmera" msprop:Generator_ColumnPropNameInRow="mera" msprop:Generator_ColumnPropNameInTable="meraColumn" msprop:Generator_UserColumnName="mera" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prace" msprop:Generator_ColumnVarNameInTable="columnprace" msprop:Generator_ColumnPropNameInRow="prace" msprop:Generator_ColumnPropNameInTable="praceColumn" msprop:Generator_UserColumnName="prace" type="xs:decimal" minOccurs="0" />
+              <xs:element name="summa" msprop:Generator_ColumnVarNameInTable="columnsumma" msprop:Generator_ColumnPropNameInRow="summa" msprop:Generator_ColumnPropNameInTable="summaColumn" msprop:Generator_UserColumnName="summa" type="xs:decimal" minOccurs="0" />
+              <xs:element name="tehno" msprop:Generator_ColumnVarNameInTable="columntehno" msprop:Generator_ColumnPropNameInRow="tehno" msprop:Generator_ColumnPropNameInTable="tehnoColumn" msprop:Generator_UserColumnName="tehno" type="xs:int" minOccurs="0" />
+              <xs:element name="norma" msprop:Generator_ColumnVarNameInTable="columnnorma" msprop:Generator_ColumnPropNameInRow="norma" msprop:Generator_ColumnPropNameInTable="normaColumn" msprop:Generator_UserColumnName="norma" type="xs:int" minOccurs="0" />
+              <xs:element name="vedomostnumber" msprop:Generator_ColumnVarNameInTable="columnvedomostnumber" msprop:Generator_ColumnPropNameInRow="vedomostnumber" msprop:Generator_ColumnPropNameInTable="vedomostnumberColumn" msprop:Generator_UserColumnName="vedomostnumber" type="xs:int" minOccurs="0" />
+              <xs:element name="NameOs" msprop:Generator_ColumnVarNameInTable="columnNameOs" msprop:Generator_ColumnPropNameInRow="NameOs" msprop:Generator_ColumnPropNameInTable="NameOsColumn" msprop:Generator_UserColumnName="NameOs" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Obect" msprop:Generator_ColumnVarNameInTable="columnObect" msprop:Generator_ColumnPropNameInRow="Obect" msprop:Generator_ColumnPropNameInTable="ObectColumn" msprop:Generator_UserColumnName="Obect" type="xs:int" minOccurs="0" />
+              <xs:element name="kol_1_1" msprop:Generator_ColumnVarNameInTable="columnkol_1_1" msprop:Generator_ColumnPropNameInRow="kol_1_1" msprop:Generator_ColumnPropNameInTable="kol_1_1Column" msprop:Generator_UserColumnName="kol_1_1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="sum_1_1" msprop:Generator_ColumnVarNameInTable="columnsum_1_1" msprop:Generator_ColumnPropNameInRow="sum_1_1" msprop:Generator_ColumnPropNameInTable="sum_1_1Column" msprop:Generator_UserColumnName="sum_1_1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="kol_1_2" msprop:Generator_ColumnVarNameInTable="columnkol_1_2" msprop:Generator_ColumnPropNameInRow="kol_1_2" msprop:Generator_ColumnPropNameInTable="kol_1_2Column" msprop:Generator_UserColumnName="kol_1_2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="sum_1_2" msprop:Generator_ColumnVarNameInTable="columnsum_1_2" msprop:Generator_ColumnPropNameInRow="sum_1_2" msprop:Generator_ColumnPropNameInTable="sum_1_2Column" msprop:Generator_UserColumnName="sum_1_2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="kol_2_1" msprop:Generator_ColumnVarNameInTable="columnkol_2_1" msprop:Generator_ColumnPropNameInRow="kol_2_1" msprop:Generator_ColumnPropNameInTable="kol_2_1Column" msprop:Generator_UserColumnName="kol_2_1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="sum_2_1" msprop:Generator_ColumnVarNameInTable="columnsum_2_1" msprop:Generator_ColumnPropNameInRow="sum_2_1" msprop:Generator_ColumnPropNameInTable="sum_2_1Column" msprop:Generator_UserColumnName="sum_2_1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="kol_2_2" msprop:Generator_ColumnVarNameInTable="columnkol_2_2" msprop:Generator_ColumnPropNameInRow="kol_2_2" msprop:Generator_ColumnPropNameInTable="kol_2_2Column" msprop:Generator_UserColumnName="kol_2_2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="sum_2_2" msprop:Generator_ColumnVarNameInTable="columnsum_2_2" msprop:Generator_ColumnPropNameInRow="sum_2_2" msprop:Generator_ColumnPropNameInTable="sum_2_2Column" msprop:Generator_UserColumnName="sum_2_2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="priznak" msprop:Generator_ColumnVarNameInTable="columnpriznak" msprop:Generator_ColumnPropNameInRow="priznak" msprop:Generator_ColumnPropNameInTable="priznakColumn" msprop:Generator_UserColumnName="priznak" type="xs:int" minOccurs="0" />
+              <xs:element name="inventoryNumber" msprop:Generator_ColumnVarNameInTable="columninventoryNumber" msprop:Generator_ColumnPropNameInRow="inventoryNumber" msprop:Generator_ColumnPropNameInTable="inventoryNumberColumn" msprop:Generator_UserColumnName="inventoryNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="srok_zameni" msprop:Generator_ColumnVarNameInTable="columnsrok_zameni" msprop:Generator_ColumnPropNameInRow="srok_zameni" msprop:Generator_ColumnPropNameInTable="srok_zameniColumn" msprop:Generator_UserColumnName="srok_zameni" type="xs:int" minOccurs="0" />
+              <xs:element name="nam_zameni" msprop:Generator_ColumnVarNameInTable="columnnam_zameni" msprop:Generator_ColumnPropNameInRow="nam_zameni" msprop:Generator_ColumnPropNameInTable="nam_zameniColumn" msprop:Generator_UserColumnName="nam_zameni" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="namdoc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnamdoc" msprop:Generator_ColumnPropNameInRow="namdoc" msprop:Generator_ColumnPropNameInTable="namdocColumn" msprop:Generator_UserColumnName="namdoc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="b_bal_cena" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnb_bal_cena" msprop:Generator_ColumnPropNameInRow="b_bal_cena" msprop:Generator_ColumnPropNameInTable="b_bal_cenaColumn" msprop:Generator_UserColumnName="b_bal_cena" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

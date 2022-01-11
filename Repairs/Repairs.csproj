@@ -1,0 +1,1878 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BEC38BD2-3A95-421C-A998-0473BBE330EB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Repairs</RootNamespace>
+    <AssemblyName>Repairs</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\uaesb-FS-001\SYS\BUX\arc\New_Repair\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>1</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\uaesb-FS-001\SYS\BUX\arc\New_Repair\</InstallUrl>
+    <MinimumRequiredVersion>1.0.0.422</MinimumRequiredVersion>
+    <ApplicationRevision>453</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>repairs_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D4BE145E2881D7EFFCDFEB495417770FEBF28960</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocMAH">
+      <HintPath>..\packages\DocMAH.0.9.9.0\lib\net40\DocMAH.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisualBasic.PowerPacks.Vs.1.0.0\lib\Microsoft.VisualBasic.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisualBasic.PowerPacks.Vs.1.0.0\lib\Microsoft.VisualBasic.PowerPacks.Vs.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActOprihodBU.cs">
+      <DependentUpon>ActOprihodBU.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ActOprihodBU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActOprihodBU.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AlterQuery.cs" />
+    <Compile Include="analitika.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>analitika.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cbxDolg1.cs" />
+    <Compile Include="cbxDolg1Container.cs" />
+    <Compile Include="cbxDolg2.cs" />
+    <Compile Include="cbxDolg2Container.cs" />
+    <Compile Include="cbxFio1.cs" />
+    <Compile Include="cbxFio1Container.cs" />
+    <Compile Include="cbxFio2.cs" />
+    <Compile Include="cbxFio2Container.cs" />
+    <Compile Include="cbxShpz.cs" />
+    <Compile Include="cbxShpzContainer.cs" />
+    <Compile Include="Cbxvhod.cs" />
+    <Compile Include="Cbxvhod__container.cs" />
+    <Compile Include="Change_ceh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change_ceh.Designer.cs">
+      <DependentUpon>Change_ceh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Class2.cs" />
+    <Compile Include="DAL.cs" />
+    <Compile Include="DAL_DBF.cs" />
+    <Compile Include="DAL_DBF_SKLAD.cs" />
+    <Compile Include="DAL_Kontragent.cs" />
+    <Compile Include="DataSetPTOPrint.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPTOPrint.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataTable.cs" />
+    <Compile Include="Dostup.cs" />
+    <Compile Include="formAddAdditionalCeh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAddAdditionalCeh.Designer.cs">
+      <DependentUpon>formAddAdditionalCeh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formAddRemoveAdditionalCeh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAddRemoveAdditionalCeh.Designer.cs">
+      <DependentUpon>formAddRemoveAdditionalCeh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formChooseAdditionalCeh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formChooseAdditionalCeh.Designer.cs">
+      <DependentUpon>formChooseAdditionalCeh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formCurrentMonthSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formCurrentMonthSelection.designer.cs">
+      <DependentUpon>formCurrentMonthSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formUsersListManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formUsersListManager.Designer.cs">
+      <DependentUpon>formUsersListManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddJobInRepairForAKT_F2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddJobInRepairForAKT_F2.Designer.cs">
+      <DependentUpon>frmAddJobInRepairForAKT_F2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportIstoriyaOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportIstoriyaOS.Designer.cs">
+      <DependentUpon>frmReportIstoriyaOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTypeMetallManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTypeMetallManager.designer.cs">
+      <DependentUpon>frmTypeMetallManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmJobsForAKT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmJobsForAKT.Designer.cs">
+      <DependentUpon>myfrmJobsForAKT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAadUupdateJobFromAKT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAadUupdateJobFromAKT.Designer.cs">
+      <DependentUpon>frmAadUupdateJobFromAKT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintAktF2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintAktF2.Designer.cs">
+      <DependentUpon>frmPrintAktF2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintDodatok1_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintDodatok1_1.Designer.cs">
+      <DependentUpon>frmPrintDodatok1_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintDodatok1_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintDodatok1_2.Designer.cs">
+      <DependentUpon>frmPrintDodatok1_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintDodatok2_1_a.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintDodatok2_1_a.Designer.cs">
+      <DependentUpon>frmPrintDodatok2_1_a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintDodatok2_2_a.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintDodatok2_2_a.Designer.cs">
+      <DependentUpon>frmPrintDodatok2_2_a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintDodatok3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintDodatok3.Designer.cs">
+      <DependentUpon>frmPrintDodatok3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintDodatok4_1_a.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintDodatok4_1_a.Designer.cs">
+      <DependentUpon>frmPrintDodatok4_1_a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintDodatok4_2_a.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintDodatok4_2_a.Designer.cs">
+      <DependentUpon>frmPrintDodatok4_2_a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintDodatok5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintDodatok5.Designer.cs">
+      <DependentUpon>frmPrintDodatok5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport_Vip_Remonti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport_Vip_Remonti.Designer.cs">
+      <DependentUpon>frmReport_Vip_Remonti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport_Zvit_Spisok_FromVedRes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport_Zvit_Spisok_FromVedRes.Designer.cs">
+      <DependentUpon>frmReport_Zvit_Spisok_FromVedRes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport_Zvit_Vip_Remonti_FromVedRes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport_Zvit_Vip_Remonti_FromVedRes.Designer.cs">
+      <DependentUpon>frmReport_Zvit_Vip_Remonti_FromVedRes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport_Zvit_Vitrach_Chas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport_Zvit_Vitrach_Chas.Designer.cs">
+      <DependentUpon>frmReport_Zvit_Vitrach_Chas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdateCh_chas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateCh_chas.Designer.cs">
+      <DependentUpon>frmUpdateCh_chas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_change_dat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_change_dat.Designer.cs">
+      <DependentUpon>frm_change_dat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_change_year.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_change_year.Designer.cs">
+      <DependentUpon>frm_change_year.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_print_spis_vedres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_print_spis_vedres.Designer.cs">
+      <DependentUpon>frm_print_spis_vedres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_vibor_druk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_vibor_druk.Designer.cs">
+      <DependentUpon>frm_vibor_druk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_zakr_mes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_zakr_mes.Designer.cs">
+      <DependentUpon>frm_zakr_mes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmAllAkt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmAllAkt.Designer.cs">
+      <DependentUpon>myfrmAllAkt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmFormAktUsl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmFormAktUsl.Designer.cs">
+      <DependentUpon>myfrmFormAktUsl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmKolRem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmKolRem.Designer.cs">
+      <DependentUpon>myfrmKolRem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmPidpisiForAktF2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmPidpisiForAktF2.Designer.cs">
+      <DependentUpon>myfrmPidpisiForAktF2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmProcentsForAKT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmProcentsForAKT.Designer.cs">
+      <DependentUpon>myfrmProcentsForAKT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmDrukPTO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmDrukPTO.Designer.cs">
+      <DependentUpon>myfrmDrukPTO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCarriagesRepair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCarriagesRepair.Designer.cs">
+      <DependentUpon>frmCarriagesRepair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGetToRepair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGetToRepair.Designer.cs">
+      <DependentUpon>frmGetToRepair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHatch.Designer.cs">
+      <DependentUpon>frmHatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMap.Designer.cs">
+      <DependentUpon>frmMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOS.Designer.cs">
+      <DependentUpon>frmOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmParts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParts.Designer.cs">
+      <DependentUpon>frmParts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlanRepairs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanRepairs.Designer.cs">
+      <DependentUpon>frmPlanRepairs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportHatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportHatch.Designer.cs">
+      <DependentUpon>frmReportHatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportParts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportParts.Designer.cs">
+      <DependentUpon>frmReportParts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportPlan.Designer.cs">
+      <DependentUpon>frmReportPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSprRefJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSprRefJob.Designer.cs">
+      <DependentUpon>frmSprRefJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSprRefPlace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSprRefPlace.Designer.cs">
+      <DependentUpon>frmSprRefPlace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSprShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSprShow.Designer.cs">
+      <DependentUpon>frmSprShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStores.Designer.cs">
+      <DependentUpon>frmStores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVhod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVhod.Designer.cs">
+      <DependentUpon>frmVhod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWorkOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkOS.Designer.cs">
+      <DependentUpon>frmWorkOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KontrAgent.cs" />
+    <Compile Include="Login.cs" />
+    <Compile Include="Login_Container.cs" />
+    <Compile Include="milkwater.cs" />
+    <Compile Include="MOL.cs" />
+    <Compile Include="myfrmActsOprihod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmActsOprihod.Designer.cs">
+      <DependentUpon>myfrmActsOprihod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmAddNewRepair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmAddNewRepair.Designer.cs">
+      <DependentUpon>myfrmAddNewRepair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmAddNewReplacerPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmAddNewReplacerPart.Designer.cs">
+      <DependentUpon>myfrmAddNewReplacerPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmAddNewRepPartNotMol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmAddNewRepPartNotMol.Designer.cs">
+      <DependentUpon>myfrmAddNewRepPartNotMol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmAddNewVozvrDet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmAddNewVozvrDet.Designer.cs">
+      <DependentUpon>myfrmAddNewVozvrDet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmAddNewVozvrMet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmAddNewVozvrMet.Designer.cs">
+      <DependentUpon>myfrmAddNewVozvrMet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyfrmAgrJournal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyfrmAgrJournal.Designer.cs">
+      <DependentUpon>MyfrmAgrJournal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmAgrReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmAgrReport.Designer.cs">
+      <DependentUpon>myfrmAgrReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmAllVedomotsResursov.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmAllVedomotsResursov.Designer.cs">
+      <DependentUpon>myfrmAllVedomotsResursov.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmAlterPerPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmAlterPerPart.Designer.cs">
+      <DependentUpon>myfrmAlterPerPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmAlterReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmAlterReport.Designer.cs">
+      <DependentUpon>myfrmAlterReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmAnalitika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmAnalitika.Designer.cs">
+      <DependentUpon>myfrmAnalitika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmCarriagesRepairs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmCarriagesRepairs.Designer.cs">
+      <DependentUpon>myfrmCarriagesRepairs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmGetToRepairs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmGetToRepairs.Designer.cs">
+      <DependentUpon>myfrmGetToRepairs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmHelp.Designer.cs">
+      <DependentUpon>myfrmHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmNewJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmNewJob.Designer.cs">
+      <DependentUpon>myfrmNewJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmNewPlacePart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmNewPlacePart.Designer.cs">
+      <DependentUpon>myfrmNewPlacePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmPrintForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmPrintForm2.Designer.cs">
+      <DependentUpon>myfrmPrintForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmPrintReportTMCMOL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmPrintReportTMCMOL.Designer.cs">
+      <DependentUpon>myfrmPrintReportTMCMOL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmPrintVedRes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmPrintVedRes.Designer.cs">
+      <DependentUpon>myfrmPrintVedRes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmProizvodstvennoTehOtchet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmProizvodstvennoTehOtchet.Designer.cs">
+      <DependentUpon>myfrmProizvodstvennoTehOtchet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myFrmProsmDannie_Aktov.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myFrmProsmDannie_Aktov.Designer.cs">
+      <DependentUpon>myFrmProsmDannie_Aktov.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmPTO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmPTO.Designer.cs">
+      <DependentUpon>myfrmPTO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmRedZhpz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmRedZhpz.Designer.cs">
+      <DependentUpon>myfrmRedZhpz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmReportPTOPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmReportPTOPrint.Designer.cs">
+      <DependentUpon>myfrmReportPTOPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmReport_ActBuOprihod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmReport_ActBuOprihod.Designer.cs">
+      <DependentUpon>myfrmReport_ActBuOprihod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyfrmSearchKontragent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyfrmSearchKontragent.Designer.cs">
+      <DependentUpon>MyfrmSearchKontragent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmSearchTMC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmSearchTMC.Designer.cs">
+      <DependentUpon>myfrmSearchTMC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmSelectMol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmSelectMol.Designer.cs">
+      <DependentUpon>myfrmSelectMol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmUpdateAllForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmUpdateAllForm2.Designer.cs">
+      <DependentUpon>myfrmUpdateAllForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmUpdateAllVedRes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmUpdateAllVedRes.Designer.cs">
+      <DependentUpon>myfrmUpdateAllVedRes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmUpdateReplacedPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmUpdateReplacedPart.Designer.cs">
+      <DependentUpon>myfrmUpdateReplacedPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmVedomostResursov.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmVedomostResursov.Designer.cs">
+      <DependentUpon>myfrmVedomostResursov.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmVedomostResursovForAllOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmVedomostResursovForAllOS.Designer.cs">
+      <DependentUpon>myfrmVedomostResursovForAllOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmVedomostResursovForAllRepairs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmVedomostResursovForAllRepairs.Designer.cs">
+      <DependentUpon>myfrmVedomostResursovForAllRepairs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrm_add_uzel_rem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrm_add_uzel_rem.Designer.cs">
+      <DependentUpon>myfrm_add_uzel_rem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myFrm_AktF2_podrjadchiki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myFrm_AktF2_podrjadchiki.Designer.cs">
+      <DependentUpon>myFrm_AktF2_podrjadchiki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myFrmReplaceZnachForAktiForCeh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myFrmReplaceZnachForAktiForCeh.Designer.cs">
+      <DependentUpon>myFrmReplaceZnachForAktiForCeh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrm_AktOprihod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrm_AktOprihod.Designer.cs">
+      <DependentUpon>myfrm_AktOprihod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrm_klassif_pr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrm_klassif_pr.Designer.cs">
+      <DependentUpon>myfrm_klassif_pr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrm_ne_spisano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrm_ne_spisano.Designer.cs">
+      <DependentUpon>myfrm_ne_spisano.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmProstoi_Vvod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmProstoi_Vvod.Designer.cs">
+      <DependentUpon>myfrmProstoi_Vvod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmProstoi_Prosm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmProstoi_Prosm.Designer.cs">
+      <DependentUpon>myfrmProstoi_Prosm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myfrm_otchet_prostoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrm_otchet_prostoi.Designer.cs">
+      <DependentUpon>myfrm_otchet_prostoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myTMCReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myTMCReport.Designer.cs">
+      <DependentUpon>myTMCReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlacePart.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RDSet12.cs">
+      <DependentUpon>RDSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RDSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RDSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepaircoddetName.cs" />
+    <Compile Include="RepairOSDS.cs">
+      <DependentUpon>RepairOSDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairOSDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairOSDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="myfrmAddReplacedPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myfrmAddReplacedPart.Designer.cs">
+      <DependentUpon>myfrmAddReplacedPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet10.cs">
+      <DependentUpon>RepairsDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet112.cs">
+      <DependentUpon>RepairsDataSet112.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet112.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet112.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet12.cs">
+      <DependentUpon>RepairsDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet13.cs">
+      <DependentUpon>RepairsDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet19.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet20.cs">
+      <DependentUpon>RepairsDataSet20.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet20.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet20.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet211.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet211.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet3.cs">
+      <DependentUpon>RepairsDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet31.cs">
+      <DependentUpon>RepairsDataSet31.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet31.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet31.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet5.cs">
+      <DependentUpon>RepairsDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet7.cs">
+      <DependentUpon>RepairsDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet81.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet81.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet9.cs">
+      <DependentUpon>RepairsDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairsDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReplacedPart.cs" />
+    <Compile Include="ReportForm2.cs" />
+    <Compile Include="ReportPTO_VozvrDetPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportPTO_VozvrDetPrint.Designer.cs">
+      <DependentUpon>ReportPTO_VozvrDetPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportTMCMOL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportTMCMOL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tabl.cs">
+      <DependentUpon>tabl.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tabl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tabl.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TestReportDelete.cs" />
+    <Compile Include="toolTip1.cs" />
+    <Compile Include="Vedomost.cs" />
+    <Compile Include="VedomostResursov.cs">
+      <DependentUpon>VedomostResursov.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="VedomostResursov.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VedomostResursov.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintDodatok2_1_b.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintDodatok2_1_b.Designer.cs">
+      <DependentUpon>frmPrintDodatok2_1_b.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintDodatok2_2_b.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintDodatok2_2_b.Designer.cs">
+      <DependentUpon>frmPrintDodatok2_2_b.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintDodatok4_1_b.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintDodatok4_1_b.Designer.cs">
+      <DependentUpon>frmPrintDodatok4_1_b.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintDodatok4_2_b.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintDodatok4_2_b.Designer.cs">
+      <DependentUpon>frmPrintDodatok4_2_b.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VedomostResursov_stringInventoryNumber.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VedomostResursov_stringInventoryNumber.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Change_ceh.resx">
+      <DependentUpon>Change_ceh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formAddAdditionalCeh.resx">
+      <DependentUpon>formAddAdditionalCeh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formAddRemoveAdditionalCeh.resx">
+      <DependentUpon>formAddRemoveAdditionalCeh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formChooseAdditionalCeh.resx">
+      <DependentUpon>formChooseAdditionalCeh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formCurrentMonthSelection.resx">
+      <DependentUpon>formCurrentMonthSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formUsersListManager.resx">
+      <DependentUpon>formUsersListManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddJobInRepairForAKT_F2.resx">
+      <DependentUpon>frmAddJobInRepairForAKT_F2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportIstoriyaOS.resx">
+      <DependentUpon>frmReportIstoriyaOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTypeMetallManager.resx">
+      <DependentUpon>frmTypeMetallManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmJobsForAKT.resx">
+      <DependentUpon>myfrmJobsForAKT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAadUupdateJobFromAKT.resx">
+      <DependentUpon>frmAadUupdateJobFromAKT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintAktF2.resx">
+      <DependentUpon>frmPrintAktF2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintDodatok1_1.resx">
+      <DependentUpon>frmPrintDodatok1_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintDodatok1_2.resx">
+      <DependentUpon>frmPrintDodatok1_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintDodatok2_1_a.resx">
+      <DependentUpon>frmPrintDodatok2_1_a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintDodatok2_2_a.resx">
+      <DependentUpon>frmPrintDodatok2_2_a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintDodatok3.resx">
+      <DependentUpon>frmPrintDodatok3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintDodatok4_1_a.resx">
+      <DependentUpon>frmPrintDodatok4_1_a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintDodatok4_2_a.resx">
+      <DependentUpon>frmPrintDodatok4_2_a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintDodatok5.resx">
+      <DependentUpon>frmPrintDodatok5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport_Vip_Remonti.resx">
+      <DependentUpon>frmReport_Vip_Remonti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport_Zvit_Spisok_FromVedRes.resx">
+      <DependentUpon>frmReport_Zvit_Spisok_FromVedRes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport_Zvit_Vip_Remonti_FromVedRes.resx">
+      <DependentUpon>frmReport_Zvit_Vip_Remonti_FromVedRes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport_Zvit_Vitrach_Chas.resx">
+      <DependentUpon>frmReport_Zvit_Vitrach_Chas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateCh_chas.resx">
+      <DependentUpon>frmUpdateCh_chas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_change_dat.resx">
+      <DependentUpon>frm_change_dat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_change_year.resx">
+      <DependentUpon>frm_change_year.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_print_spis_vedres.resx">
+      <DependentUpon>frm_print_spis_vedres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_vibor_druk.resx">
+      <DependentUpon>frm_vibor_druk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_zakr_mes.resx">
+      <DependentUpon>frm_zakr_mes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmAllAkt.resx">
+      <DependentUpon>myfrmAllAkt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmFormAktUsl.resx">
+      <DependentUpon>myfrmFormAktUsl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmKolRem.resx">
+      <DependentUpon>myfrmKolRem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmPidpisiForAktF2.resx">
+      <DependentUpon>myfrmPidpisiForAktF2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmProcentsForAKT.resx">
+      <DependentUpon>myfrmProcentsForAKT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmDrukPTO.resx">
+      <DependentUpon>myfrmDrukPTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCarriagesRepair.resx">
+      <DependentUpon>frmCarriagesRepair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGetToRepair.resx">
+      <DependentUpon>frmGetToRepair.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHatch.resx">
+      <DependentUpon>frmHatch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMap.resx">
+      <DependentUpon>frmMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOS.resx">
+      <DependentUpon>frmOS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParts.resx">
+      <DependentUpon>frmParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanRepairs.resx">
+      <DependentUpon>frmPlanRepairs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportHatch.resx">
+      <DependentUpon>frmReportHatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportParts.resx">
+      <DependentUpon>frmReportParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportPlan.resx">
+      <DependentUpon>frmReportPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSprRefJob.resx">
+      <DependentUpon>frmSprRefJob.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSprRefPlace.resx">
+      <DependentUpon>frmSprRefPlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSprShow.resx">
+      <DependentUpon>frmSprShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStores.resx">
+      <DependentUpon>frmStores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVhod.resx">
+      <DependentUpon>frmVhod.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkOS.resx">
+      <DependentUpon>frmWorkOS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmActsOprihod.resx">
+      <DependentUpon>myfrmActsOprihod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmAddNewRepair.resx">
+      <DependentUpon>myfrmAddNewRepair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmAddNewReplacerPart.resx">
+      <DependentUpon>myfrmAddNewReplacerPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmAddNewRepPartNotMol.resx">
+      <DependentUpon>myfrmAddNewRepPartNotMol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmAddNewVozvrDet.resx">
+      <DependentUpon>myfrmAddNewVozvrDet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmAddNewVozvrMet.resx">
+      <DependentUpon>myfrmAddNewVozvrMet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmAddReplacedPart.resx">
+      <DependentUpon>myfrmAddReplacedPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyfrmAgrJournal.resx">
+      <DependentUpon>MyfrmAgrJournal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmAgrReport.resx">
+      <DependentUpon>myfrmAgrReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmAllVedomotsResursov.resx">
+      <DependentUpon>myfrmAllVedomotsResursov.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmAlterPerPart.resx">
+      <DependentUpon>myfrmAlterPerPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmAlterReport.resx">
+      <DependentUpon>myfrmAlterReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmAnalitika.resx">
+      <DependentUpon>myfrmAnalitika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmCarriagesRepairs.resx">
+      <DependentUpon>myfrmCarriagesRepairs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmGetToRepairs.resx">
+      <DependentUpon>myfrmGetToRepairs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmHelp.resx">
+      <DependentUpon>myfrmHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmNewJob.resx">
+      <DependentUpon>myfrmNewJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmNewPlacePart.resx">
+      <DependentUpon>myfrmNewPlacePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmPrintForm2.resx">
+      <DependentUpon>myfrmPrintForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmPrintReportTMCMOL.resx">
+      <DependentUpon>myfrmPrintReportTMCMOL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmPrintVedRes.resx">
+      <DependentUpon>myfrmPrintVedRes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmProizvodstvennoTehOtchet.resx">
+      <DependentUpon>myfrmProizvodstvennoTehOtchet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myFrmProsmDannie_Aktov.resx">
+      <DependentUpon>myFrmProsmDannie_Aktov.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmPTO.resx">
+      <DependentUpon>myfrmPTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmRedZhpz.resx">
+      <DependentUpon>myfrmRedZhpz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmReportPTOPrint.resx">
+      <DependentUpon>myfrmReportPTOPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmReport_ActBuOprihod.resx">
+      <DependentUpon>myfrmReport_ActBuOprihod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyfrmSearchKontragent.resx">
+      <DependentUpon>MyfrmSearchKontragent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmSearchTMC.resx">
+      <DependentUpon>myfrmSearchTMC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmSelectMol.resx">
+      <DependentUpon>myfrmSelectMol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmUpdateAllForm2.resx">
+      <DependentUpon>myfrmUpdateAllForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmUpdateAllVedRes.resx">
+      <DependentUpon>myfrmUpdateAllVedRes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmUpdateReplacedPart.resx">
+      <DependentUpon>myfrmUpdateReplacedPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmVedomostResursov.resx">
+      <DependentUpon>myfrmVedomostResursov.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmVedomostResursovForAllOS.resx">
+      <DependentUpon>myfrmVedomostResursovForAllOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmVedomostResursovForAllRepairs.resx">
+      <DependentUpon>myfrmVedomostResursovForAllRepairs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmProstoi_Vvod.resx">
+      <DependentUpon>myfrmProstoi_Vvod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrm_add_uzel_rem.resx">
+      <DependentUpon>myfrm_add_uzel_rem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myFrm_AktF2_podrjadchiki.resx">
+      <DependentUpon>myFrm_AktF2_podrjadchiki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myFrmReplaceZnachForAktiForCeh.resx">
+      <DependentUpon>myFrmReplaceZnachForAktiForCeh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrm_AktOprihod.resx">
+      <DependentUpon>myfrm_AktOprihod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrm_klassif_pr.resx">
+      <DependentUpon>myfrm_klassif_pr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrm_ne_spisano.resx">
+      <DependentUpon>myfrm_ne_spisano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrmProstoi_Prosm.resx">
+      <DependentUpon>myfrmProstoi_Prosm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myfrm_otchet_prostoi.resx">
+      <DependentUpon>myfrm_otchet_prostoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myTMCReport.resx">
+      <DependentUpon>myTMCReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepForm2.rdlc" />
+    <EmbeddedResource Include="ReporPTOPrint.rdlc" />
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report10.rdlc" />
+    <EmbeddedResource Include="Report11.rdlc" />
+    <EmbeddedResource Include="Report12.rdlc" />
+    <EmbeddedResource Include="Report16.rdlc" />
+    <EmbeddedResource Include="Report18.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report20.rdlc" />
+    <EmbeddedResource Include="Report21.rdlc" />
+    <EmbeddedResource Include="Report22.rdlc" />
+    <EmbeddedResource Include="Report23.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="Report5.rdlc" />
+    <EmbeddedResource Include="Report6.rdlc" />
+    <EmbeddedResource Include="Report7.rdlc" />
+    <EmbeddedResource Include="Report8.rdlc" />
+    <EmbeddedResource Include="Report9.rdlc" />
+    <EmbeddedResource Include="Report9PTO.rdlc" />
+    <EmbeddedResource Include="ReportPTO_VozvrDetPrint.resx">
+      <DependentUpon>ReportPTO_VozvrDetPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportTMCMOL.rdlc" />
+    <EmbeddedResource Include="Report_dodatok1_1.rdlc" />
+    <EmbeddedResource Include="Report_dodatok1_2.rdlc" />
+    <EmbeddedResource Include="Report_dodatok2_1.rdlc" />
+    <EmbeddedResource Include="Report_dodatok2_1test.rdlc" />
+    <EmbeddedResource Include="Report_dodatok2_2.rdlc" />
+    <EmbeddedResource Include="Report_dodatok3.rdlc" />
+    <EmbeddedResource Include="Report_dodatok4_1.rdlc" />
+    <EmbeddedResource Include="Report_dodatok4_2.rdlc" />
+    <EmbeddedResource Include="Report_dodatok5.rdlc" />
+    <EmbeddedResource Include="Report_OprihodAct_BU.rdlc" />
+    <EmbeddedResource Include="Report_otch_prostio.rdlc" />
+    <EmbeddedResource Include="Report_Prosm_Akti.rdlc" />
+    <EmbeddedResource Include="Report_trst.rdlc" />
+    <EmbeddedResource Include="Rep_Ne_spis_mat.rdlc" />
+    <EmbeddedResource Include="spisok_ved_res.rdlc" />
+    <EmbeddedResource Include="VedomostResursov.rdlc" />
+    <EmbeddedResource Include="Report9PTOPrint.rdlc" />
+    <EmbeddedResource Include="RepPrintAktF2.rdlc" />
+    <EmbeddedResource Include="Report19.rdlc" />
+    <EmbeddedResource Include="frmPrintDodatok2_1_b.resx">
+      <DependentUpon>frmPrintDodatok2_1_b.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintDodatok2_2_b.resx">
+      <DependentUpon>frmPrintDodatok2_2_b.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintDodatok4_1_b.resx">
+      <DependentUpon>frmPrintDodatok4_1_b.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintDodatok4_2_b.resx">
+      <DependentUpon>frmPrintDodatok4_2_b.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report_dodatok2_1_b.rdlc" />
+    <EmbeddedResource Include="Report_dodatok2_2_b.rdlc" />
+    <EmbeddedResource Include="Report_dodatok4_1_b.rdlc" />
+    <EmbeddedResource Include="Report_dodatok4_2_b.rdlc" />
+    <None Include="ActOprihodBU.Report_ActsDataTable.datasource" />
+    <None Include="ActOprihodBU.xsc">
+      <DependentUpon>ActOprihodBU.xsd</DependentUpon>
+    </None>
+    <None Include="ActOprihodBU.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ActOprihodBU.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ActOprihodBU.xss">
+      <DependentUpon>ActOprihodBU.xsd</DependentUpon>
+    </None>
+    <None Include="analitika.xsc">
+      <DependentUpon>analitika.xsd</DependentUpon>
+    </None>
+    <None Include="analitika.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>analitika.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="analitika.xss">
+      <DependentUpon>analitika.xsd</DependentUpon>
+    </None>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetPTOPrint.xsc">
+      <DependentUpon>DataSetPTOPrint.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPTOPrint.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPTOPrint.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetPTOPrint.xss">
+      <DependentUpon>DataSetPTOPrint.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="RDSet12.xsc">
+      <DependentUpon>RDSet12.xsd</DependentUpon>
+    </None>
+    <None Include="RDSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RDSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RDSet12.xss">
+      <DependentUpon>RDSet12.xsd</DependentUpon>
+    </None>
+    <None Include="RepairOSDS.xsc">
+      <DependentUpon>RepairOSDS.xsd</DependentUpon>
+    </None>
+    <None Include="RepairOSDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairOSDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairOSDS.xss">
+      <DependentUpon>RepairOSDS.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet10.xsc">
+      <DependentUpon>RepairsDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet10.xss">
+      <DependentUpon>RepairsDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet11.xsc">
+      <DependentUpon>RepairsDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet11.xss">
+      <DependentUpon>RepairsDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet112.xsc">
+      <DependentUpon>RepairsDataSet112.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet112.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet112.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet112.xss">
+      <DependentUpon>RepairsDataSet112.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet12.xsc">
+      <DependentUpon>RepairsDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet12.xss">
+      <DependentUpon>RepairsDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet13.xsc">
+      <DependentUpon>RepairsDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet13.xss">
+      <DependentUpon>RepairsDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet14.xsc">
+      <DependentUpon>RepairsDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet14.xss">
+      <DependentUpon>RepairsDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet15.xsc">
+      <DependentUpon>RepairsDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet15.xss">
+      <DependentUpon>RepairsDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet16.xsc">
+      <DependentUpon>RepairsDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet16.xss">
+      <DependentUpon>RepairsDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet17.xsc">
+      <DependentUpon>RepairsDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet17.xss">
+      <DependentUpon>RepairsDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet18.xsc">
+      <DependentUpon>RepairsDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet18.xss">
+      <DependentUpon>RepairsDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet19.xsc">
+      <DependentUpon>RepairsDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet19.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet19.xss">
+      <DependentUpon>RepairsDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet20.xsc">
+      <DependentUpon>RepairsDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet20.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet20.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet20.xss">
+      <DependentUpon>RepairsDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet21.xsc">
+      <DependentUpon>RepairsDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet21.xss">
+      <DependentUpon>RepairsDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet211.xsc">
+      <DependentUpon>RepairsDataSet211.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet211.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet211.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet211.xss">
+      <DependentUpon>RepairsDataSet211.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet3.xsc">
+      <DependentUpon>RepairsDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet3.xss">
+      <DependentUpon>RepairsDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet31.xsc">
+      <DependentUpon>RepairsDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet31.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet31.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet31.xss">
+      <DependentUpon>RepairsDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet4.xsc">
+      <DependentUpon>RepairsDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet4.xss">
+      <DependentUpon>RepairsDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet5.xsc">
+      <DependentUpon>RepairsDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet5.xss">
+      <DependentUpon>RepairsDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet6.xsc">
+      <DependentUpon>RepairsDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet6.xss">
+      <DependentUpon>RepairsDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet7.xsc">
+      <DependentUpon>RepairsDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet7.xss">
+      <DependentUpon>RepairsDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet81.xsc">
+      <DependentUpon>RepairsDataSet81.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet81.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet81.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet81.xss">
+      <DependentUpon>RepairsDataSet81.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet9.xsc">
+      <DependentUpon>RepairsDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="RepairsDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairsDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairsDataSet9.xss">
+      <DependentUpon>RepairsDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="Repairs_2_TemporaryKey.pfx" />
+    <None Include="ReportTMCMOL.xsc">
+      <DependentUpon>ReportTMCMOL.xsd</DependentUpon>
+    </None>
+    <None Include="ReportTMCMOL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportTMCMOL.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportTMCMOL.xss">
+      <DependentUpon>ReportTMCMOL.xsd</DependentUpon>
+    </None>
+    <None Include="tabl.xsc">
+      <DependentUpon>tabl.xsd</DependentUpon>
+    </None>
+    <None Include="tabl.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tabl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tabl.xss">
+      <DependentUpon>tabl.xsd</DependentUpon>
+    </None>
+    <None Include="VedomostResursov.xsc">
+      <DependentUpon>VedomostResursov.xsd</DependentUpon>
+    </None>
+    <None Include="VedomostResursov.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VedomostResursov.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="VedomostResursov.xss">
+      <DependentUpon>VedomostResursov.xsd</DependentUpon>
+    </None>
+    <None Include="VedomostResursov_stringInventoryNumber.xsc">
+      <DependentUpon>VedomostResursov_stringInventoryNumber.xsd</DependentUpon>
+    </None>
+    <None Include="VedomostResursov_stringInventoryNumber.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VedomostResursov_stringInventoryNumber.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VedomostResursov_stringInventoryNumber.xss">
+      <DependentUpon>VedomostResursov_stringInventoryNumber.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Repairs_1_TemporaryKey.pfx" />
+    <None Include="Repairs_TemporaryKey.pfx" />
+    <None Include="Resources\54556df54 %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="repairs_icon.ico" />
+    <Content Include="Resources\down-arrow-png-10212.png" />
+    <None Include="Resources\No-entry.png" />
+    <None Include="Resources\OK1.png" />
+    <None Include="Resources\104.png" />
+    <None Include="Resources\OK.png" />
+    <None Include="Resources\103.png" />
+    <None Include="Resources\button_delete.png" />
+    <None Include="Resources\b_currv_up_2.png" />
+    <None Include="Resources\b_currv_up.png" />
+    <None Include="Resources\b_currv_l_2.png" />
+    <None Include="Resources\b_currv_l.png" />
+    <None Include="Resources\b_currv_25.png" />
+    <None Include="Resources\b_currv_2_2.png" />
+    <None Include="Resources\b_curr_12_2.png" />
+    <None Include="Resources\b_curr_12.png" />
+    <None Include="Resources\g_currv_up_2.png" />
+    <None Include="Resources\g_currv_up.png" />
+    <None Include="Resources\g_currv_l_2.png" />
+    <None Include="Resources\g_currv_l.png" />
+    <None Include="Resources\g_currv_25.png" />
+    <None Include="Resources\g_currv_2_2.png" />
+    <None Include="Resources\g_curr_12_2.png" />
+    <None Include="Resources\g_curr_12.png" />
+    <None Include="Resources\y_currv_up_2.png" />
+    <None Include="Resources\y_currv_up.png" />
+    <None Include="Resources\y_currv_l_2.png" />
+    <None Include="Resources\y_currv_l.png" />
+    <None Include="Resources\y_currv_25.png" />
+    <None Include="Resources\y_currv_2_2.png" />
+    <None Include="Resources\y_curr_12_2.png" />
+    <None Include="Resources\y_curr_12.png" />
+    <None Include="Resources\o_currv_up_2.png" />
+    <None Include="Resources\o_currv_up.png" />
+    <None Include="Resources\o_currv_l_2.png" />
+    <None Include="Resources\o_currv_l.png" />
+    <None Include="Resources\o_currv_25.png" />
+    <None Include="Resources\o_currv_2_2.png" />
+    <None Include="Resources\o_curr_12_2.png" />
+    <None Include="Resources\o_curr_12.png" />
+    <None Include="Resources\r_currv_up_2.png" />
+    <None Include="Resources\r_currv_up.png" />
+    <None Include="Resources\r_currv_l_2.png" />
+    <None Include="Resources\r_currv_l.png" />
+    <None Include="Resources\r_currv_25.png" />
+    <None Include="Resources\r_currv_2_2.png" />
+    <None Include="Resources\r_curr_12_2.png" />
+    <None Include="Resources\r_curr_12.png" />
+    <None Include="Resources\currv_up_2.png" />
+    <None Include="Resources\curr_12_2.png" />
+    <None Include="Resources\currv_2_2.png" />
+    <None Include="Resources\currv_l_2.png" />
+    <None Include="Resources\ll.png" />
+    <None Include="Resources\curr_12.png" />
+    <None Include="Resources\currv_25.png" />
+    <None Include="Resources\currv_l.png" />
+    <None Include="Resources\currv_up.png" />
+    <None Include="Resources\search%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualBasic.PowerPacks.Vs">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль Microsoft .NET Framework 4 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль .NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

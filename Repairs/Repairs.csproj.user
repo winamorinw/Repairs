@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishUrlHistory>\\uaesb-FS-001\SYS\BUX\arc\New_Repair\|C:\Users\Vlasyuk_RV\test\|C:\Users\Vlasyuk_RV\Desktop\|\\Users\Vlasyuk_RV\test\|\\uaesb-FS-002\SYS\BUX\arc\New_Repair\</PublishUrlHistory>
+    <InstallUrlHistory>\\uaesb-FS-001\SYS\BUX\arc\New_Repair\|\\Users\Vlasyuk_RV\test\|\\Users\Vlasyuk_RV\Desktop\|\\uaesb-FS-002\SYS\BUX\arc\New_Repair\|\\10.244.20.73\fs-oit\common\Тищенко\RepairSetup\</InstallUrlHistory>
+    <SupportUrlHistory />
+    <UpdateUrlHistory />
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <ProjectView>ShowAllFiles</ProjectView>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
+  </PropertyGroup>
+</Project>

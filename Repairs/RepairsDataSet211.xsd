@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RepairsDataSet21" targetNamespace="http://tempuri.org/RepairsDataSet211.xsd" xmlns:mstns="http://tempuri.org/RepairsDataSet211.xsd" xmlns="http://tempuri.org/RepairsDataSet211.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="RepairOSConnStr" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="RepairOSConnStr (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Repairs.Properties.Settings.GlobalReference.Default.RepairOSConnStr" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Vedomost_ResursovTableAdapter" GeneratorDataComponentClassName="Vedomost_ResursovTableAdapter" Name="Vedomost_Resursov" UserDataComponentName="Vedomost_ResursovTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RepairOSConnStr (Settings)" DbObjectName="Repairs.dbo.Vedomost_Resursov" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT InventoryNamber FROM dbo.Vedomost_Resursov</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="InventoryNamber" DataSetColumn="InventoryNamber" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RepairsDataSet21" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="RepairsDataSet21" msprop:Generator_UserDSName="RepairsDataSet21">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Vedomost_Resursov" msprop:Generator_TableClassName="Vedomost_ResursovDataTable" msprop:Generator_TableVarName="tableVedomost_Resursov" msprop:Generator_TablePropName="Vedomost_Resursov" msprop:Generator_RowDeletingName="Vedomost_ResursovRowDeleting" msprop:Generator_RowChangingName="Vedomost_ResursovRowChanging" msprop:Generator_RowEvHandlerName="Vedomost_ResursovRowChangeEventHandler" msprop:Generator_RowDeletedName="Vedomost_ResursovRowDeleted" msprop:Generator_UserTableName="Vedomost_Resursov" msprop:Generator_RowChangedName="Vedomost_ResursovRowChanged" msprop:Generator_RowEvArgName="Vedomost_ResursovRowChangeEvent" msprop:Generator_RowClassName="Vedomost_ResursovRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InventoryNamber" msprop:Generator_ColumnVarNameInTable="columnInventoryNamber" msprop:Generator_ColumnPropNameInRow="InventoryNamber" msprop:Generator_ColumnPropNameInTable="InventoryNamberColumn" msprop:Generator_UserColumnName="InventoryNamber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
