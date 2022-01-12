@@ -955,6 +955,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>tabl.xsd</DependentUpon>
     </Compile>
+    <Compile Include="test1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TestReportDelete.cs" />
     <Compile Include="toolTip1.cs" />
     <Compile Include="Vedomost.cs" />
@@ -1710,6 +1715,17 @@
     <None Include="tabl.xss">
       <DependentUpon>tabl.xsd</DependentUpon>
     </None>
+    <None Include="test1.xsc">
+      <DependentUpon>test1.xsd</DependentUpon>
+    </None>
+    <None Include="test1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>test1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="test1.xss">
+      <DependentUpon>test1.xsd</DependentUpon>
+    </None>
     <None Include="VedomostResursov.xsc">
       <DependentUpon>VedomostResursov.xsd</DependentUpon>
     </None>
@@ -1801,42 +1817,42 @@
   <ItemGroup>
     <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.WinForms">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.VisualBasic.PowerPacks.Vs">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>

@@ -38,8 +38,8 @@ namespace Repairs
 
 
             // строка 41 заменена на 42 так как понял датаадаптер изза малоценки в инвентарных номерах г  
-            //this.Vedomost_ResursovTableAdapter.Fill(this.VedomostResursov.Vedomost_Resursov, ceh,cnow_dat1, cnow_dat2);
-            this.vedomost_ResursovTableAdapter1.Fill(this.vedomostResursov_stringInventoryNumber1.Vedomost_Resursov, ceh, cnow_dat1, cnow_dat2);
+            this.Vedomost_ResursovTableAdapter.Fill(this.VedomostResursov.Vedomost_Resursov, ceh,cnow_dat1, cnow_dat2);
+            //this.vedomost_ResursovTableAdapter1.Fill(this.vedomostResursov_stringInventoryNumber1.Vedomost_Resursov, ceh, cnow_dat1, cnow_dat2);
 
 
 

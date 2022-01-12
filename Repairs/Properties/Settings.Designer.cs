@@ -37,8 +37,8 @@ namespace Repairs.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=UAESB-SQL-02;Initial Catalog=Repairs2;Integrated Security=False;User " +
-            "ID=sa;Password=sql1112;Pooling=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=UAESB-SQL-02;Initial Catalog=Repairs;Integrated Security=False;User I" +
+            "D=sa;Password=sql1112;Pooling=True")]
         public string RepairsConnectionString {
             get {
                 return ((string)(this["RepairsConnectionString"]));

@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.VedomostResursov = new Repairs.VedomostResursov();
             this.VRVedBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.VedomostResursov = new Repairs.VedomostResursov();
             this.VRVedTableAdapter = new Repairs.VedomostResursovTableAdapters.VRVedTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.VedomostResursov)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.VRVedBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VedomostResursov)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -49,15 +49,15 @@
             this.reportViewer1.Size = new System.Drawing.Size(932, 548);
             this.reportViewer1.TabIndex = 0;
             // 
-            // VedomostResursov
-            // 
-            this.VedomostResursov.DataSetName = "VedomostResursov";
-            this.VedomostResursov.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // VRVedBindingSource
             // 
             this.VRVedBindingSource.DataMember = "VRVed";
             this.VRVedBindingSource.DataSource = this.VedomostResursov;
+            // 
+            // VedomostResursov
+            // 
+            this.VedomostResursov.DataSetName = "VedomostResursov";
+            this.VedomostResursov.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // VRVedTableAdapter
             // 
@@ -72,8 +72,8 @@
             this.Name = "myfrmPrintForm2";
             this.Text = "Печать форма 2";
             this.Load += new System.EventHandler(this.myfrmPrintForm2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.VedomostResursov)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.VRVedBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VedomostResursov)).EndInit();
             this.ResumeLayout(false);
 
         }

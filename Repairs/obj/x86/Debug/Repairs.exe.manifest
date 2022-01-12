@@ -103,24 +103,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Repairs.exe" size="9750016">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Repairs.exe" size="10000896">
       <assemblyIdentity name="Repairs" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>9pC2PZl+G4vZNlzXK6LYFVPeRZY=</dsig:DigestValue>
+        <dsig:DigestValue>KanqdbVWzAotY4SDuwJwRw0+7VQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Repairs.exe.config" size="1210">
+  <file name="Repairs.exe.config" size="1209">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>0HYrO52cgK2WPdh8GdU2pr8KWvU=</dsig:DigestValue>
+      <dsig:DigestValue>sHK+fjOkNstN0TfYvJhh5ST1Pao=</dsig:DigestValue>
     </hash>
   </file>
   <file name="repairs_icon.ico" size="10462">
