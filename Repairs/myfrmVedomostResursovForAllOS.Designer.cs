@@ -61,6 +61,7 @@
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvLogin = new System.Windows.Forms.DataGridView();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Vozvr_Met)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -68,6 +69,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_RepPlaceVedRes)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_numberVed
@@ -429,11 +431,20 @@
             this.panel1.Size = new System.Drawing.Size(151, 64);
             this.panel1.TabIndex = 52;
             // 
+            // dgvLogin
+            // 
+            this.dgvLogin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLogin.Location = new System.Drawing.Point(1013, 539);
+            this.dgvLogin.Name = "dgvLogin";
+            this.dgvLogin.Size = new System.Drawing.Size(12, 11);
+            this.dgvLogin.TabIndex = 53;
+            // 
             // myfrmVedomostResursovForAllOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 560);
+            this.Controls.Add(this.dgvLogin);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label18);
@@ -473,6 +484,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_RepPlaceVedRes)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -513,5 +525,6 @@
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dgvLogin;
     }
 }

@@ -278,31 +278,88 @@ namespace Repairs
             }
 
             // конец проверка дат установки материалов
+            SqlConnection cn = new SqlConnection("Data Source=UAESB-SQL-02;Initial Catalog=Repairs;Integrated Security=False;User ID=sa;Password=sql1112;Pooling=True");
+            cn.Open();
+            string canformirovat = "";
+
+            // сюда добавить проверку на 54.4 для 48
+            // узнать кто юзер 
+           // string username = "Sitaruk_AV";// Environment.UserName;
+            //Dostup.Login_user = username;
+
+            //dgvLogin.DataSource = dal.GetInfoDostup();
+
+        /*    Dostup.Codcx = dgvLogin.Rows[0].Cells["codcx"].Value.ToString();
+            Dostup.Coduth = dgvLogin.Rows[0].Cells["coduth"].Value.ToString();
+            Dostup.Codbrig = dgvLogin.Rows[0].Cells["codbrig"].Value.ToString();
+            Dostup.Coddet = dgvLogin.Rows[0].Cells["coddet"].Value.ToString();
+            Dostup.Plot = dgvLogin.Rows[0].Cells["plot"].Value.ToString();
+            Dostup.Name = dgvLogin.Rows[0].Cells["name"].Value.ToString();
+            Dostup.Dostup1 = dgvLogin.Rows[0].Cells["dostup"].Value.ToString();
+            Dostup.Dostup_tmc = dgvLogin.Rows[0].Cells["dostup_tmc"].Value.ToString();
+            Dostup.Kod_dostup_pr = dgvLogin.Rows[0].Cells["kod_dostup_pr"].Value.ToString();
+            Dostup.Ceh_dostup_pr = dgvLogin.Rows[0].Cells["ceh_dostup_pr"].Value.ToString();
+            Dostup.Gosti = dgvLogin.Rows[0].Cells["gosti"].Value.ToString();
+            Dostup.Dostup_akt = dgvLogin.Rows[0].Cells["dostup_akt"].Value.ToString();*/
+            // если 54.4 
+
+
+            if (Dostup.Codcx == "54")
+            {
+                // ispolnitel_ceh == 40 && ispolmitel_uch == 8
+
+
+                //"select * from Vedomost_Resursov where InventoryNamber='" + this.label9.Text.ToString() + "' and Obekt=" + this.label11.Text.ToString() + "  and Ispolnitel_codcx = 40 and Ispolnitel_coduth = 8" 
+                string q_check = "select * from Vedomost_Resursov where InventoryNamber='" + this.label9.Text.ToString() + "' and Obekt=" + this.label11.Text.ToString() + "  and Ispolnitel_codcx = 40 and Ispolnitel_coduth = 8";
+                SqlCommand cm00 = new SqlCommand(q_check, cn);
+                Debug.WriteLine(cm00.CommandText);
+                SqlDataReader dr00 = cm00.ExecuteReader();
+
+                if (dr00.HasRows)
+                {
+                    Debug.WriteLine("1");
+
+                    canformirovat = "yes";
+                }
+                else
+                {
+                    //SqlCommand cm0 = new SqlCommand(" select * from Vedomost_Resursov where InventoryNamber=" + this.label9.Text.ToString() + " and ( PeriodData1 between '" + dtp_date1.Value.ToString("yyyyMMdd") + "' and '" + dtp_date2.Value.ToString("yyyyMMdd") + "' or  PeriodData2 between '" + dtp_date1.Value.ToString("yyyyMMdd") + "' and '" + dtp_date2.Value.ToString("yyyyMMdd") + "')", cn);
+                    SqlCommand cm0 = new SqlCommand(" select * from Vedomost_Resursov where InventoryNamber='" + this.label9.Text.ToString() + "' and Obekt=" + this.label11.Text.ToString() + "  and ( ( '" + dtp_date1.Value.ToString("yyyyMMdd") + "' >= PeriodData1 AND '" + dtp_date1.Value.ToString("yyyyMMdd") + "' <= PeriodData2) OR ('" + dtp_date2.Value.ToString("yyyyMMdd") + "' >= PeriodData1 AND '" + dtp_date2.Value.ToString("yyyyMMdd") + "' <= PeriodData2) OR ('" + dtp_date1.Value.ToString("yyyyMMdd") + "' <= PeriodData1 AND '" + dtp_date2.Value.ToString("yyyyMMdd") + "' >= PeriodData2) ) and kod_rem!=8", cn);
+                    //kod_rem<>8 не берём в учет услуги с материалами
+
+                    Debug.WriteLine(cm0.CommandText);
+                    SqlDataReader dr0 = cm0.ExecuteReader();
+
+                    if (dr0.HasRows)
+                    {
+                        MessageBox.Show("Інв.№ " + this.label9.Text.ToString() + " за період з " + dtp_date1.Value.ToString("dd.MM.yyyy") + " по " + dtp_date2.Value.ToString("dd.MM.yyyy") + " вже ремонтує інший. Неможливо сформувати вдомість ресурсів.");
+                        canformirovat = "no";
+                    }
+                    else
+                    {
+                        //MessageBox.Show("can form");
+                        canformirovat = "yes";
+                    }
+                    dr0.Close();
+                }
+            }
+          
+
+
 
 
             // проверяем есть ли записи по данному инв.№ за выбранный период
-            string canformirovat = "";
-            //SqlConnection cn = new SqlConnection("Data Source=UAESB-SQL-02;Initial Catalog=Repairs;Integrated Security=True;MultipleActiveResultSets=True");
-            SqlConnection cn = new SqlConnection("Data Source=UAESB-SQL-02;Initial Catalog=Repairs;Integrated Security=False;User ID=sa;Password=sql1112;Pooling=True");
-
-            cn.Open();
-            //SqlCommand cm0 = new SqlCommand(" select * from Vedomost_Resursov where InventoryNamber=" + this.label9.Text.ToString() + " and ( PeriodData1 between '" + dtp_date1.Value.ToString("yyyyMMdd") + "' and '" + dtp_date2.Value.ToString("yyyyMMdd") + "' or  PeriodData2 between '" + dtp_date1.Value.ToString("yyyyMMdd") + "' and '" + dtp_date2.Value.ToString("yyyyMMdd") + "')", cn);
-            SqlCommand cm0 = new SqlCommand(" select * from Vedomost_Resursov where InventoryNamber='" + this.label9.Text.ToString() + "' and Obekt=" + this.label11.Text.ToString() + "  and ( ( '" + dtp_date1.Value.ToString("yyyyMMdd") + "' >= PeriodData1 AND '" + dtp_date1.Value.ToString("yyyyMMdd") + "' <= PeriodData2) OR ('" + dtp_date2.Value.ToString("yyyyMMdd") + "' >= PeriodData1 AND '" + dtp_date2.Value.ToString("yyyyMMdd") + "' <= PeriodData2) OR ('" + dtp_date1.Value.ToString("yyyyMMdd") + "' <= PeriodData1 AND '" + dtp_date2.Value.ToString("yyyyMMdd") + "' >= PeriodData2) ) and kod_rem!=8", cn);
-            //kod_rem<>8 не берём в учет услуги с материалами
             
-            Debug.WriteLine(cm0.CommandText);
-            SqlDataReader dr0 = cm0.ExecuteReader();
-            if (dr0.HasRows)
-            {
-                MessageBox.Show("Інв.№ " + this.label9.Text.ToString() + " за період з " + dtp_date1.Value.ToString("dd.MM.yyyy") + " по " + dtp_date2.Value.ToString("dd.MM.yyyy") + " вже ремонтує інший. Неможливо сформувати вдомість ресурсів.");
-                canformirovat = "no";
-            }
-            else
-            {
-                //MessageBox.Show("can form");
-                canformirovat = "yes";
-            }
-            dr0.Close();
+            //SqlConnection cn = new SqlConnection("Data Source=UAESB-SQL-02;Initial Catalog=Repairs;Integrated Security=True;MultipleActiveResultSets=True");
+            
+
+            
+
+
+
+
+            
+            
 
 
             if (radioButton4.Checked == false && radioButton5.Checked == false)

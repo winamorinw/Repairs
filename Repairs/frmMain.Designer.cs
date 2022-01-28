@@ -89,8 +89,8 @@
             this.ремонтныеУзлыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.металобрухтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.додатковіЦехиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.люкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.люкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.актыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.актНаОприходываниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ведомостьРесурсовToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -686,6 +686,13 @@
             this.додатковіЦехиToolStripMenuItem.Text = "Додаткові цехи";
             this.додатковіЦехиToolStripMenuItem.Click += new System.EventHandler(this.додатковіЦехиToolStripMenuItem_Click);
             // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(79, 25);
+            this.справкаToolStripMenuItem.Text = "Довідка";
+            this.справкаToolStripMenuItem.Click += new System.EventHandler(this.справкаToolStripMenuItem_Click);
+            // 
             // люкиToolStripMenuItem
             // 
             this.люкиToolStripMenuItem.Name = "люкиToolStripMenuItem";
@@ -693,13 +700,6 @@
             this.люкиToolStripMenuItem.Text = "Люки";
             this.люкиToolStripMenuItem.Visible = false;
             this.люкиToolStripMenuItem.Click += new System.EventHandler(this.люкиToolStripMenuItem_Click);
-            // 
-            // справкаToolStripMenuItem
-            // 
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(79, 25);
-            this.справкаToolStripMenuItem.Text = "Довідка";
-            this.справкаToolStripMenuItem.Click += new System.EventHandler(this.справкаToolStripMenuItem_Click);
             // 
             // актыToolStripMenuItem
             // 
@@ -986,7 +986,6 @@
         private System.Windows.Forms.ToolStripMenuItem отчетПоЗапчастямToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчетПоТиповымРаботамToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem тМЦToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dgv_dostup;
         private System.Windows.Forms.ToolStripMenuItem актыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem актНаОприходываниеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem актыНаОприходываниеToolStripMenuItem;
@@ -1016,6 +1015,7 @@
         private System.Windows.Forms.ToolStripMenuItem переводМесяцаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem додатковіЦехиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem додатиКористувачаToolStripMenuItem;
+        public System.Windows.Forms.DataGridView dgv_dostup;
     }
 }
 

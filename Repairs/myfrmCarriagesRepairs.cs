@@ -887,7 +887,7 @@ namespace Repairs
                     RepaircoddetName.Coddet = dgv_Repair.CurrentRow.Cells["coddet"].Value.ToString();
                     if (((Dostup.Codcx == RepaircoddetName.Codcx) && (Dostup.Coduth == RepaircoddetName.Coduth) &&
                         (Dostup.Codbrig == RepaircoddetName.Codbrig)) || ((Dostup.Codcx == RepaircoddetName.Codcx) && (Dostup.Coduth == "88")) || (dgv_Repair.CurrentRow.Cells["RDivision"].Value.ToString() == "9966"))
-                    {
+                    {   
                         string message = "Ви Вилучаєте замінну запчастину ";
                         const string caption = "Уважно подумай!!!";
                         var result = MessageBox.Show(message, caption,

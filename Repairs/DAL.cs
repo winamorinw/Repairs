@@ -1114,7 +1114,7 @@ and prace = '{6}'  and Shpz = '{7}'  and trim(Zavnom)='{8}'
         public bool DeleteReplacedPart(String ReplacedID)
         {
             bool flagDel = false;
-            string query = string.Format("delete ReplacedPart where ReplacedId = '{0}' and (Original is null or Original = 0)", ReplacedID);
+            string query = string.Format("delete ReplacedPart where ReplacedId = '{0}' and (Original is null or Original = 0 or Original = 1)", ReplacedID);
             using (SqlConnection con = new SqlConnection(constr))
             {
                 SqlCommand com = new SqlCommand(query, con);

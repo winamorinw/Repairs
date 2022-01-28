@@ -90,7 +90,7 @@ namespace Repairs
             string username = Environment.UserName;
             if (username == "Vlasyuk_RV")
             {
-                //username = "Rozmyslova_SA";
+                username = "Rozmyslova_SA";// "Kharenko_AV";// "Danilenko_NV";
             }
             if (customName != "")
             {
@@ -121,6 +121,7 @@ namespace Repairs
                     Dostup.Login_user = username;
                     cn.ConnectionString = Repairs.Properties.Settings.Default.RepairOSConnStr;
                     dgv_dostup.Visible = false;
+                    
                     dgv_dostup.DataSource = dal.GetInfoDostup();
                     Dostup.Codcx = dgv_dostup.Rows[0].Cells["codcx"].Value.ToString();
                     Dostup.Coduth = dgv_dostup.Rows[0].Cells["coduth"].Value.ToString();
@@ -277,6 +278,7 @@ namespace Repairs
                 case "KUZMINSKAYA_MA":
                 case "RUBANENKO_VV":
                 case "BOYARSKIJ_DA":
+                case "VLASYUK_RV":
                     формуванняПТЗToolStripMenuItem.Enabled = true;
                     break;
                 default:
