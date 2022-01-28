@@ -343,6 +343,27 @@ namespace Repairs
                     dr0.Close();
                 }
             }
+            else
+            {
+                //SqlCommand cm0 = new SqlCommand(" select * from Vedomost_Resursov where InventoryNamber=" + this.label9.Text.ToString() + " and ( PeriodData1 between '" + dtp_date1.Value.ToString("yyyyMMdd") + "' and '" + dtp_date2.Value.ToString("yyyyMMdd") + "' or  PeriodData2 between '" + dtp_date1.Value.ToString("yyyyMMdd") + "' and '" + dtp_date2.Value.ToString("yyyyMMdd") + "')", cn);
+                SqlCommand cm0 = new SqlCommand(" select * from Vedomost_Resursov where InventoryNamber='" + this.label9.Text.ToString() + "' and Obekt=" + this.label11.Text.ToString() + "  and ( ( '" + dtp_date1.Value.ToString("yyyyMMdd") + "' >= PeriodData1 AND '" + dtp_date1.Value.ToString("yyyyMMdd") + "' <= PeriodData2) OR ('" + dtp_date2.Value.ToString("yyyyMMdd") + "' >= PeriodData1 AND '" + dtp_date2.Value.ToString("yyyyMMdd") + "' <= PeriodData2) OR ('" + dtp_date1.Value.ToString("yyyyMMdd") + "' <= PeriodData1 AND '" + dtp_date2.Value.ToString("yyyyMMdd") + "' >= PeriodData2) ) and kod_rem!=8", cn);
+                //kod_rem<>8 не берём в учет услуги с материалами
+
+                Debug.WriteLine(cm0.CommandText);
+                SqlDataReader dr0 = cm0.ExecuteReader();
+
+                if (dr0.HasRows)
+                {
+                    MessageBox.Show("Інв.№ " + this.label9.Text.ToString() + " за період з " + dtp_date1.Value.ToString("dd.MM.yyyy") + " по " + dtp_date2.Value.ToString("dd.MM.yyyy") + " вже ремонтує інший. Неможливо сформувати вдомість ресурсів.");
+                    canformirovat = "no";
+                }
+                else
+                {
+                    //MessageBox.Show("can form");
+                    canformirovat = "yes";
+                }
+                dr0.Close();
+            }
           
 
 
