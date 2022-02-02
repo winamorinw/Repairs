@@ -90,7 +90,7 @@ namespace Repairs
             string username = Environment.UserName;
             if (username == "Vlasyuk_RV")
             {
-                username = "Rozmyslova_SA";// "Kharenko_AV";// "Danilenko_NV";
+                //username = "";// "Kharenko_AV";// "Danilenko_NV";
             }
             if (customName != "")
             {

@@ -284,27 +284,27 @@ namespace Repairs
 
             // сюда добавить проверку на 54.4 для 48
             // узнать кто юзер 
-           // string username = "Sitaruk_AV";// Environment.UserName;
+            // string username = "Sitaruk_AV";// Environment.UserName;
             //Dostup.Login_user = username;
 
             //dgvLogin.DataSource = dal.GetInfoDostup();
 
-        /*    Dostup.Codcx = dgvLogin.Rows[0].Cells["codcx"].Value.ToString();
-            Dostup.Coduth = dgvLogin.Rows[0].Cells["coduth"].Value.ToString();
-            Dostup.Codbrig = dgvLogin.Rows[0].Cells["codbrig"].Value.ToString();
-            Dostup.Coddet = dgvLogin.Rows[0].Cells["coddet"].Value.ToString();
-            Dostup.Plot = dgvLogin.Rows[0].Cells["plot"].Value.ToString();
-            Dostup.Name = dgvLogin.Rows[0].Cells["name"].Value.ToString();
-            Dostup.Dostup1 = dgvLogin.Rows[0].Cells["dostup"].Value.ToString();
-            Dostup.Dostup_tmc = dgvLogin.Rows[0].Cells["dostup_tmc"].Value.ToString();
-            Dostup.Kod_dostup_pr = dgvLogin.Rows[0].Cells["kod_dostup_pr"].Value.ToString();
-            Dostup.Ceh_dostup_pr = dgvLogin.Rows[0].Cells["ceh_dostup_pr"].Value.ToString();
-            Dostup.Gosti = dgvLogin.Rows[0].Cells["gosti"].Value.ToString();
-            Dostup.Dostup_akt = dgvLogin.Rows[0].Cells["dostup_akt"].Value.ToString();*/
+            /*    Dostup.Codcx = dgvLogin.Rows[0].Cells["codcx"].Value.ToString();
+                Dostup.Coduth = dgvLogin.Rows[0].Cells["coduth"].Value.ToString();
+                Dostup.Codbrig = dgvLogin.Rows[0].Cells["codbrig"].Value.ToString();
+                Dostup.Coddet = dgvLogin.Rows[0].Cells["coddet"].Value.ToString();
+                Dostup.Plot = dgvLogin.Rows[0].Cells["plot"].Value.ToString();
+                Dostup.Name = dgvLogin.Rows[0].Cells["name"].Value.ToString();
+                Dostup.Dostup1 = dgvLogin.Rows[0].Cells["dostup"].Value.ToString();
+                Dostup.Dostup_tmc = dgvLogin.Rows[0].Cells["dostup_tmc"].Value.ToString();
+                Dostup.Kod_dostup_pr = dgvLogin.Rows[0].Cells["kod_dostup_pr"].Value.ToString();
+                Dostup.Ceh_dostup_pr = dgvLogin.Rows[0].Cells["ceh_dostup_pr"].Value.ToString();
+                Dostup.Gosti = dgvLogin.Rows[0].Cells["gosti"].Value.ToString();
+                Dostup.Dostup_akt = dgvLogin.Rows[0].Cells["dostup_akt"].Value.ToString();*/
             // если 54.4 
 
-
-            if (Dostup.Codcx == "54")
+            Debug.Print(Dostup.Login_user);
+            if (Dostup.Codcx == "54" || Dostup.Login_user == "Vlasyuk_RV")
             {
                 // ispolnitel_ceh == 40 && ispolmitel_uch == 8
 
@@ -320,9 +320,11 @@ namespace Repairs
                     Debug.WriteLine("1");
 
                     canformirovat = "yes";
+                    dr00.Close();
                 }
                 else
                 {
+                    dr00.Close();
                     //SqlCommand cm0 = new SqlCommand(" select * from Vedomost_Resursov where InventoryNamber=" + this.label9.Text.ToString() + " and ( PeriodData1 between '" + dtp_date1.Value.ToString("yyyyMMdd") + "' and '" + dtp_date2.Value.ToString("yyyyMMdd") + "' or  PeriodData2 between '" + dtp_date1.Value.ToString("yyyyMMdd") + "' and '" + dtp_date2.Value.ToString("yyyyMMdd") + "')", cn);
                     SqlCommand cm0 = new SqlCommand(" select * from Vedomost_Resursov where InventoryNamber='" + this.label9.Text.ToString() + "' and Obekt=" + this.label11.Text.ToString() + "  and ( ( '" + dtp_date1.Value.ToString("yyyyMMdd") + "' >= PeriodData1 AND '" + dtp_date1.Value.ToString("yyyyMMdd") + "' <= PeriodData2) OR ('" + dtp_date2.Value.ToString("yyyyMMdd") + "' >= PeriodData1 AND '" + dtp_date2.Value.ToString("yyyyMMdd") + "' <= PeriodData2) OR ('" + dtp_date1.Value.ToString("yyyyMMdd") + "' <= PeriodData1 AND '" + dtp_date2.Value.ToString("yyyyMMdd") + "' >= PeriodData2) ) and kod_rem!=8", cn);
                     //kod_rem<>8 не берём в учет услуги с материалами
@@ -340,8 +342,10 @@ namespace Repairs
                         //MessageBox.Show("can form");
                         canformirovat = "yes";
                     }
+                    
                     dr0.Close();
                 }
+                
             }
             else
             {
