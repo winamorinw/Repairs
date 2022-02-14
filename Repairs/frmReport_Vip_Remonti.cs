@@ -44,6 +44,7 @@ namespace Repairs
             }
             else
             {
+                this.RepairsDataSet10.EnforceConstraints = false;
                 this.RepairTableAdapter.FillBy(this.RepairsDataSet10.Repair, dtpBeg.Value, dtpEnd.Value,Dostup.Codcx); 
                 
             }

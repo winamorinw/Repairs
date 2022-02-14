@@ -373,7 +373,7 @@ SELECT ReplacedId, JobId, PartId, Quantity, RepairID, EDNOME, DateInRep, Name, M
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" />
-              <xs:element name="InventoryNumber" msprop:Generator_ColumnVarNameInTable="columnInventoryNumber" msprop:Generator_ColumnPropNameInRow="InventoryNumber" msprop:Generator_ColumnPropNameInTable="InventoryNumberColumn" msprop:Generator_UserColumnName="InventoryNumber" type="xs:int" />
+              <xs:element name="InventoryNumber" msprop:Generator_ColumnVarNameInTable="columnInventoryNumber" msprop:Generator_ColumnPropNameInRow="InventoryNumber" msprop:Generator_ColumnPropNameInTable="InventoryNumberColumn" msprop:Generator_UserColumnName="InventoryNumber" type="xs:string" />
               <xs:element name="DateOut" msprop:Generator_ColumnVarNameInTable="columnDateOut" msprop:Generator_ColumnPropNameInRow="DateOut" msprop:Generator_ColumnPropNameInTable="DateOutColumn" msprop:Generator_UserColumnName="DateOut" type="xs:dateTime" minOccurs="0" />
               <xs:element name="CODCX" msprop:Generator_ColumnVarNameInTable="columnCODCX" msprop:Generator_ColumnPropNameInRow="CODCX" msprop:Generator_ColumnPropNameInTable="CODCXColumn" msprop:Generator_UserColumnName="CODCX" minOccurs="0">
                 <xs:simpleType>
@@ -403,7 +403,7 @@ SELECT ReplacedId, JobId, PartId, Quantity, RepairID, EDNOME, DateInRep, Name, M
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Shpz" msprop:Generator_ColumnVarNameInTable="columnShpz" msprop:Generator_ColumnPropNameInRow="Shpz" msprop:Generator_ColumnPropNameInTable="ShpzColumn" msprop:Generator_UserColumnName="Shpz" minOccurs="0">
+              <xs:element name="Shpz" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Shpz" msprop:Generator_ColumnVarNameInTable="columnShpz" msprop:Generator_ColumnPropNameInTable="ShpzColumn" msprop:Generator_UserColumnName="Shpz" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />

@@ -3646,7 +3646,7 @@ namespace Repairs.VedomostResursov_stringInventoryNumberTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        ID, RepairID, InventoryNamber, NameOS, PeriodData1, PeriodData2, Shpz, Zakazchik_codcx, Zakazchik_coduth, Ispolnitel_codcx, Ispolnitel_coduth, Ispolnitel_codbrig, Ispolnitel_coddet, Ispolnitel_Name, VedomostNumber, 
@@ -3660,6 +3660,19 @@ ORDER BY ID DESC";
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codcx", global::System.Data.SqlDbType.NVarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "Ispolnitel_codcx", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PeriodData2_1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "PeriodData1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PeriodData2_2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "PeriodData1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        ID, RepairID, InventoryNamber, NameOS, PeriodData1, PeriodData2, Shpz, Zakazchik_codcx, Zakazchik_coduth, Ispolnitel_codcx, Ispolnitel_coduth, Ispolnitel_codbrig, Ispolnitel_coddet, Ispolnitel_Name, VedomostNumber, 
+                         Original, dolg2, FIO2, dolg1, FIO1, Zakazchik_codbrig, Zakazchik_coddet, Obekt, dolg3, FIO3, dolg4, FIO4, dolg2f2, FIO2f2, dolg1f2, FIO1f2, dolg3f2, FIO3f2, dolg4f2, FIO4f2, KodKontrAgent, NameKontragent, EdrpouKontragent, 
+                         kod_rem, IdPTO, DatBegRem, DatEndRem, FIO5f2, dolg5f2, srok_zameni, vidrahProc, TZV, cexVitrProc, vsegoMat, amortProc, vsegoZP, sumNalogov, tzvGrn, cehVitrGrn, amortGrn, vsego_F, zaversh, IsCapital
+FROM            Vedomost_Resursov AS vr
+WHERE        (Ispolnitel_codcx = @codcx) AND (PeriodData1 >= @PeriodData2_1) AND (PeriodData1 <= @PeriodData2_2) OR
+                         (Ispolnitel_codcx = @codcx) AND (PeriodData2 >= @PeriodData2_1) AND (PeriodData2 <= @PeriodData2_2)
+ORDER BY ID DESC";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codcx", global::System.Data.SqlDbType.NVarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "Ispolnitel_codcx", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PeriodData2_1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "PeriodData1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PeriodData2_2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "PeriodData1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3699,6 +3712,66 @@ ORDER BY ID DESC";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual VedomostResursov_stringInventoryNumber.Vedomost_ResursovDataTable GetData(string codcx, string PeriodData2_1, string PeriodData2_2) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((codcx == null)) {
+                throw new global::System.ArgumentNullException("codcx");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(codcx));
+            }
+            if ((PeriodData2_1 == null)) {
+                throw new global::System.ArgumentNullException("PeriodData2_1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(PeriodData2_1));
+            }
+            if ((PeriodData2_2 == null)) {
+                throw new global::System.ArgumentNullException("PeriodData2_2");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(PeriodData2_2));
+            }
+            VedomostResursov_stringInventoryNumber.Vedomost_ResursovDataTable dataTable = new VedomostResursov_stringInventoryNumber.Vedomost_ResursovDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(VedomostResursov_stringInventoryNumber.Vedomost_ResursovDataTable dataTable, string codcx, string PeriodData2_1, string PeriodData2_2) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((codcx == null)) {
+                throw new global::System.ArgumentNullException("codcx");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(codcx));
+            }
+            if ((PeriodData2_1 == null)) {
+                throw new global::System.ArgumentNullException("PeriodData2_1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(PeriodData2_1));
+            }
+            if ((PeriodData2_2 == null)) {
+                throw new global::System.ArgumentNullException("PeriodData2_2");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(PeriodData2_2));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual VedomostResursov_stringInventoryNumber.Vedomost_ResursovDataTable GetDataBy(string codcx, string PeriodData2_1, string PeriodData2_2) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((codcx == null)) {
                 throw new global::System.ArgumentNullException("codcx");
             }

@@ -26,7 +26,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\uaesb-FS-001\SYS\BUX\arc\New_Repair\</InstallUrl>
     <MinimumRequiredVersion>1.0.0.422</MinimumRequiredVersion>
-    <ApplicationRevision>457</ApplicationRevision>
+    <ApplicationRevision>459</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

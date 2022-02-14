@@ -720,11 +720,26 @@ namespace Repairs.RepairsDataSet21TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT InventoryNamber FROM dbo.Vedomost_Resursov";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        r.DateIn, r.DateOut, r.CODCX, r.CODUTH, r.CODBRIG, r.NAMEDET, r.InventoryNumber, rp.Shpz, rp.Name, rp.Quantity, rp.Prace, rp.EDNOME, rp.DateInRep
+FROM            Repair AS r LEFT OUTER JOIN
+                         Job AS j ON r.RepairID = j.RepairId LEFT OUTER JOIN
+                         Job AS j2 ON j.JobId = j2.JobId LEFT OUTER JOIN
+                         RefJob AS rj ON rj.JobCode = j2.JobCode LEFT OUTER JOIN
+                         ReplacedPart AS rp ON j.JobId = rp.JobId
+WHERE        (CONVERT(datetime, CONVERT(varchar, r.DateOut, 1), 1) >= CONVERT(datetime, CONVERT(varchar, @datBeg, 1), 1)) AND (CONVERT(datetime, CONVERT(varchar, r.DateOut, 1), 1) <= CONVERT(datetime, CONVERT(varchar, 
+                         @datEnd, 1), 1)) AND (r.CODCX = @codcx)
+ORDER BY r.CODCX, r.CODUTH, r.CODBRIG, r.InventoryNumber";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datBeg", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datEnd", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codcx", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "CODCX", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -746,6 +761,46 @@ namespace Repairs.RepairsDataSet21TableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual RepairsDataSet21.Vedomost_ResursovDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            RepairsDataSet21.Vedomost_ResursovDataTable dataTable = new RepairsDataSet21.Vedomost_ResursovDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(RepairsDataSet21.Vedomost_ResursovDataTable dataTable, System.DateTime datBeg, System.DateTime datEnd, string codcx) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(datBeg));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(datEnd));
+            if ((codcx == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(codcx));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual RepairsDataSet21.Vedomost_ResursovDataTable GetDataBy(System.DateTime datBeg, System.DateTime datEnd, string codcx) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(datBeg));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(datEnd));
+            if ((codcx == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(codcx));
+            }
             RepairsDataSet21.Vedomost_ResursovDataTable dataTable = new RepairsDataSet21.Vedomost_ResursovDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
